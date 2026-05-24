@@ -1,0 +1,14 @@
+{% extends "store/base.html" %}
+
+{% block content %}
+<h1>{{ product.title }}</h1>
+<p>{{ product.description }}</p>
+<p>Price: ₹{{ product.price }}</p>
+
+<form action="{% url 'store:add_to_cart' product.id %}" method="post">
+  {% csrf_token %}
+  <input type="number" name="quantity" value="1" min="1">
+  <button type="submit">Add to cart</button>
+</form>
+{% endblock %}
+

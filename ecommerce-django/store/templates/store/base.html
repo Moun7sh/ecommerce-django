@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Ecommerce</title>
+    <meta charset="utf-8">
+</head>
+<body>
+
+<nav>
+    <a href="/">Home</a> |
+    <a href="/cart/">Cart</a> |
+    <a href="/signup/">Signup</a> |
+    <a href="/accounts/login/">Login</a> |
+    <!-- logout form (put this in your navbar) -->
+    <form method="post" action="{% url 'logout' %}" style="display:inline;">
+      {% csrf_token %}
+      <button type="submit" style="background:none;border:none;color:blue;cursor:pointer;padding:0;">
+        Logout
+      </button>
+    </form>
+</nav>
+
+<hr>
+
+{# === MESSAGES: put this near the top so all pages can show messages === #}
+{% if messages %}
+  <div id="messages">
+    {% for message in messages %}
+      <div class="message {{ message.tags }}">
+        {{ message }}
+      </div>
+    {% endfor %}
+  </div>
+{% endif %}
+
+{% block content %}
+{% endblock %}
+
+</body>
+</html>
