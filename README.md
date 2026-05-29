@@ -1,4 +1,4 @@
-# 🏆 Sports Store - Django E-Commerce Website
+# Sports Store - Django E-Commerce Website
 
 A Django-based e-commerce web application for selling sports products online. The project allows users to browse products, manage their shopping cart, and provides an admin panel for product management.
 
